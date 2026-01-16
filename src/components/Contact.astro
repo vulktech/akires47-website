@@ -1,0 +1,37 @@
+---
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: string;
+}
+
+interface Props {
+  email: string;
+  socials: SocialLink[];
+}
+
+const { email, socials } = Astro.props;
+---
+
+<section id="contact" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">
+            <span class="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Let's Connect</span>
+        </h2>
+        <p class="text-zinc-400 mb-10 max-w-lg mx-auto">
+            Got an idea? Let's build it together.
+        </p>
+        <div class="flex gap-4 justify-center">
+            <a href={`mailto:${email}`} class="p-3 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-violet-500/50 transition-colors" aria-label="Email">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </a>
+            {socials.map((social) => (
+                <a href={social.url} target="_blank" class="p-3 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-violet-500/50 transition-colors" aria-label={social.name}>
+                    <Fragment set:html={social.icon} />
+                </a>
+            ))}
+        </div>
+    </div>
+</section>

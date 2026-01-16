@@ -1,0 +1,41 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  avatarUrl: string;
+  tagline: string;
+  companies: Array<{ name: string; url: string; colorClass: string }>;
+}
+
+const { name, title, avatarUrl, tagline, companies } = Astro.props;
+---
+
+<section class="min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-3xl text-center">
+        <div class="mb-8">
+            <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 p-1">
+                <img src={avatarUrl} alt={name} class="w-full h-full rounded-full object-cover">
+            </div>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">
+            <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">{name}</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-zinc-400 mb-1">{title}</p>
+        {companies.map((company) => (
+            <p class="text-xl md:text-2xl text-zinc-400 mb-1">
+                Building @ <a href={company.url} target="_blank" class={`${company.colorClass} transition-colors`}>{company.name}</a>
+            </p>
+        ))}
+        <p class="text-zinc-500 text-lg max-w-xl mx-auto mb-10 mt-8">
+            {tagline}
+        </p>
+        <div class="flex gap-4 justify-center">
+            <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                Get in Touch
+            </a>
+            <a href="#about" class="px-6 py-3 border border-zinc-700 rounded-lg font-medium hover:border-zinc-500 transition-colors">
+                Learn More
+            </a>
+        </div>
+    </div>
+</section>

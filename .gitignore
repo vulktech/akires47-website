@@ -1,0 +1,73 @@
+﻿# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+*.bak
+
+# Editor/IDE folders
+.vs/
+.vscode/
+.idea/
+.cursor/
+
+# Claude/AI tools
+.claude/*
+!.claude/settings.json
+.playwright-mcp/
+tmpclaude-*/
+
+# Cloudflare
+.wrangler/
+
+# Certificates
+https/
+*.pfx
+*.pem
+*.crt
+*.key
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+packages/
+*.nupkg
+
+# Node/Frontend
+node_modules/
+.pnpm-store/
+dist/
+build/
+out/
+.output/
+.nuxt/
+.astro/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+*.cache
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/

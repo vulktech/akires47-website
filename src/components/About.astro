@@ -1,0 +1,35 @@
+---
+interface Props {
+  yearsExperience: number;
+}
+
+const { yearsExperience } = Astro.props;
+---
+
+<section id="about" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">
+            <span class="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">About Me</span>
+        </h2>
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-zinc-400 leading-relaxed mb-6 text-lg">
+                From Cordoba, Argentina to Utah, USA
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                I'm running <a href="https://vulktech.com" target="_blank" class="text-violet-400 hover:text-violet-300 transition-colors font-medium">Vulktech</a>, a software factory helping startups and businesses ship their ideas faster. Currently also building <a href="https://kazend.com" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition-colors font-medium">Kazend</a> for real estate, with more products in the queue.
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-6">
+                I believe great software starts with clean code — readable, maintainable, and built to last. But not at the cost of shipping. No endless roadmaps, no over-engineering. Just build, ship, iterate.
+            </p>
+            <p class="text-zinc-400 leading-relaxed mb-8">
+                When I step away from the keyboard, you'll find me chasing clear skies in a 172 or chasing match points on the tennis court.
+            </p>
+            <div class="flex justify-center gap-6">
+                <div class="bg-zinc-900 px-8 py-4 rounded-xl border border-zinc-800">
+                    <div class="text-3xl font-bold text-violet-400 mb-1">{yearsExperience}+</div>
+                    <div class="text-zinc-500 text-sm">Years Building Software</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
